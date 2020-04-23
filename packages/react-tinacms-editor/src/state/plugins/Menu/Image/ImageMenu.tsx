@@ -27,10 +27,10 @@ import { Dismissible } from 'react-dismissible'
 import { useEditorStateContext } from '../../../../context/editorState'
 
 interface ImageMenu {
-  uploadImages: (files: File[]) => Promise<string[]>
+  uploadImages?: (files: File[]) => Promise<string[]>
 }
 
-export default ({ uploadImages }: ImageMenu) => {
+export const ImageMenu = ({ uploadImages }: ImageMenu) => {
   if (!uploadImages) return null
 
   const { editorView } = useEditorStateContext()
